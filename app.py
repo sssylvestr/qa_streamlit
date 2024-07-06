@@ -2,7 +2,7 @@ import streamlit as st
 from transformers import pipeline
 
 # Load the QA pipeline
-repo_id = 'sylvestr/roberta-base-squad_2'  # Replace with your Hugging Face repo ID
+repo_id = 'sylvestr/squad_v2_roberta-base'  # Replace with your Hugging Face repo ID
 qa_pipeline = pipeline('question-answering', model=repo_id, tokenizer=repo_id, handle_impossible_answer=True)
 
 # Streamlit app
