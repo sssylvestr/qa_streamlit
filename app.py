@@ -3,6 +3,7 @@ from transformers import pipeline
 import torch
 
 # Load the QA pipeline
+@st.cache
 repo_id = 'sylvestr/roberta-finetuned-squad-v2'  # Replace with your Hugging Face repo ID
 qa_pipeline = pipeline('question-answering', model=repo_id, tokenizer=repo_id, handle_impossible_answer=True)
 
