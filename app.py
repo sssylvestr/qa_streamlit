@@ -12,7 +12,7 @@ def load_qa_pipeline():
 qa_pipeline = load_qa_pipeline()
 
 # Streamlit app
-st.title("Question Answering with BERT")
+st.title("Question Answering with RoBERTa")
 
 st.write("Enter a context and a question to get an answer from the fine-tuned BERT model.")
 
