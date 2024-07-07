@@ -1,5 +1,6 @@
 import streamlit as st
 from transformers import pipeline
+import torch
 
 # Load the QA pipeline
 repo_id = 'sylvestr/roberta-finetuned-squad-v2'  # Replace with your Hugging Face repo ID
