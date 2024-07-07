@@ -20,7 +20,10 @@ if st.button("Get Answer"):
     if context and question:
         input = {'question': question, 'context': context}
         response = qa_pipeline(**input)
-        answer = response['answer']
+        if response['answer'] == '':
+            answer = 'I'm sorry, the context you provided doesn't contain an answer to you question'
+        else:
+            answer = response['answer']
         st.write("**Answer:**", answer)
     else:
         st.write("Please provide both context and question.")
