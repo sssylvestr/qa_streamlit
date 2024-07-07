@@ -21,7 +21,7 @@ if st.button("Get Answer"):
         input = {'question': question, 'context': context}
         response = qa_pipeline(**input)
         if response['answer'] == '':
-            answer = 'I'm sorry, the context you provided doesn't contain an answer to you question'
+            answer = "I'm sorry, the context you provided doesn't contain an answer to you question"
         else:
             answer = response['answer']
         st.write("**Answer:**", answer)
