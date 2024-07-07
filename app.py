@@ -4,10 +4,12 @@ import torch
 
 # Load the QA pipeline
 
-repo_id = 'sylvestr/roberta-finetuned-squad-v2'  # Replace with your Hugging Face repo ID
+@st.cache_resource
+def load_qa_pipeline():
+    repo_id = 'sylvestr/roberta-finetuned-squad-v2'  # Replace with your Hugging Face repo ID
+    return pipeline('question-answering', model=repo_id, tokenizer=repo_id, handle_impossible_answer=True)
 
-@st.cache
-qa_pipeline = pipeline('question-answering', model=repo_id, tokenizer=repo_id, handle_impossible_answer=True)
+qa_pipeline = load_qa_pipeline()
 
 # Streamlit app
 st.title("Question Answering with BERT")
